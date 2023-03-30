@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>webpage</title>
+        <title>DIMON</title>
         <meta charset="utf-8">
         <script src="./js/script.js"></script>
         <link rel="stylesheet" href="./css/styles.css">
@@ -10,44 +10,64 @@
                 background-color: black;
             }
 
-            button {
-                
-            }
-
             .container {
-                border: 5px solid red;
+                display: grid;
+                grid-template-columns: 1fr 60px 1fr;
+                column-gap: 50px;
+                grid-template-rows: 1fr 5px 1fr;
+                border: none;
                 padding: 100px
-            }
+            }   
 
             .green {
+                grid-row: 1;
+                grid-column: 1;
+                justify-self: end;
+                align-self: end;
                 width: 100px;
-                height: 200px;
+                height: 150px;
                 background-color: green;
                 transform: skew(-45deg);
             }
 
             .red {
+                grid-row: 1;
+                grid-column: 3;
+                justify-self: start;
+                align-self: end;
                 width: 100px;
-                height: 200px;
+                height: 150px;
                 background-color: red;
                 transform: skew(45deg);
             }
 
             .blue {
+                grid-row: 3;
+                grid-column: 3;
+                justify-self: start;
+                align-self: start;
                 width: 100px;
-                height: 200px;
+                height: 150px;
                 background-color: blue;
                 transform: skew(-45deg);
             }
 
             .yellow {
+                grid-row: 3;
+                grid-column: 1;
+                justify-self: end;
+                align-self: start;
                 width: 100px;
-                height: 200px;
+                height: 150px;
                 background-color: yellow;
-                transform: skew(-45deg);
+                transform: skew(45deg);
             }
 
             .white {
+                grid-row: 2;
+                grid-column: 2;
+                justify-self: center;
+                align-self: center;
                 background: #fff;
                 height: 100px;
                 width:100px;
@@ -59,11 +79,17 @@
     </head>
     <body>
         <div class="container">
+            
             <button class="green"></button>
+        
             <button class="red"></button>
+        
             <button class="blue"></button>
+        
             <button class="yellow"></button>
-            <button class="white"></button>
+        
+            <button class="white"></button>    
+            
         </div>
         
     </body>
