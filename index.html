@@ -13,89 +13,183 @@
             .container {
                 display: grid;
                 grid-template-columns: 1fr 60px 1fr;
-                column-gap: 50px;
+                column-gap: 43px;
                 grid-template-rows: 1fr 5px 1fr;
                 border: none;
                 padding: 100px
             }   
 
-            .green {
+            .btn {
                 border-radius: 10px;
+                width: 100px;
+                height: 150px;
+            }
+
+            #green {
+                
                 grid-row: 1;
                 grid-column: 1;
                 justify-self: end;
                 align-self: end;
-                width: 100px;
-                height: 150px;
-                background-color: rgb(0, 128, 0);
-                transform: skew(-45deg);
+                transform: skew(-45deg);    
             }
 
-            .red {
-                border-radius: 10px;
+            #green.off {
+                background-color: rgba(50, 205, 50, 0.5);
+            }
+
+            #green.on {
+                background-color: rgb(50, 205, 50);
+            }
+
+            #red { 
                 grid-row: 1;
                 grid-column: 3;
                 justify-self: start;
                 align-self: end;
-                width: 100px;
-                height: 150px;
+                transform: skew(45deg);
+            }
+
+            #red.off {
+                background-color: rgba(220, 20, 60, 0.5);
+            }
+
+            #red.on {
                 background-color: rgb(220, 20, 60);
-                transform: skew(45deg);
             }
 
-            .blue {
-                border-radius: 10px;
+            #blue {
                 grid-row: 3;
                 grid-column: 3;
                 justify-self: start;
                 align-self: start;
-                width: 100px;
-                height: 150px;
-                background-color: rgb(30, 144, 255);
                 transform: skew(-45deg);
             }
 
-            .yellow {
-                border-radius: 10px;
+            #blue.off {
+                background-color: rgba(30, 144, 255, 0.5);
+            }
+
+            #blue.on {
+                background-color: rgb(30, 144, 255);
+            }
+
+            #yellow {
                 grid-row: 3;
                 grid-column: 1;
                 justify-self: end;
                 align-self: start;
-                width: 100px;
-                height: 150px;
-                background-color: rgb(255, 165, 0);
                 transform: skew(45deg);
             }
 
-            .white {
-                border-radius: 10px;
+            #yellow.off {
+                background-color: rgba(255, 165, 0, 0.5);
+            }
+
+            #yellow.on {
+                background-color: rgb(255, 165, 0);
+            }
+
+            #white {
                 grid-row: 2;
                 grid-column: 2;
                 justify-self: center;
                 align-self: center;
-                background: rgb(245, 245, 245);
                 height: 100px;
                 width:100px;
                 text-align: center;
                 transform:rotate(45deg);
             }
-            
+
+            #white.off {
+                background: rgba(245, 245, 245, 0.5);
+            }
+
+            #white.on {
+                background: rgb(255, 255, 255);
+            }
+
+
         </style>
     </head>
     <body>
         <div class="container">
             
-            <button class="green"></button>
+            <div id="green" class="btn off"></div>
         
-            <button class="red"></button>
+            <div id="red" class="btn off"></div>
         
-            <button class="blue"></button>
+            <div id="blue" class="btn off"></div>
         
-            <button class="yellow"></button>
+            <div id="yellow" class="btn off"></div>
         
-            <button class="white"></button>    
+            <div id="white" class="btn off"></div>    
             
         </div>
+
+        <script>
+
+            var red = document.getElementById("red");
+            var blue = document.getElementById("blue");
+            var yellow = document.getElementById("yellow");
+            var green = document.getElementById("green");
+            var white = document.getElementById("white");
+
+            function handleKeyDown(evt){
+                var key = evt.keyCode; 
+
+                if (key === 74) {
+                    red.classList.remove("off")
+                    red.classList.add("on")
+                }
+                if (key === 75) {
+                    blue.classList.remove("off")
+                    blue.classList.add("on")
+                }
+                if (key === 68) {
+                    yellow.classList.remove("off")
+                    yellow.classList.add("on")
+                }
+                if (key === 70) {
+                    green.classList.remove("off")
+                    green.classList.add("on")
+                }
+                if (key === 32) {
+                    white.classList.remove("off")
+                    white.classList.add("on")
+                }
+
+            }
+
+
+            function handleKeyUp(evt){
+                var key = evt.keyCode; 
+
+                if (key === 74) {
+                    red.classList.remove("on")
+                    red.classList.add("off")
+                }
+                if (key === 75) {
+                    blue.classList.remove("on")
+                    blue.classList.add("off")
+                }
+                if (key === 68) {
+                    yellow.classList.remove("on")
+                    yellow.classList.add("off")
+                }
+                if (key === 70) {
+                    green.classList.remove("on")
+                    green.classList.add("off")
+                }
+                if (key === 32) {
+                    white.classList.remove("on")
+                    white.classList.add("off")
+                }
+
+            }
+            window.addEventListener('keydown', handleKeyDown)
+            window.addEventListener('keyup', handleKeyUp);
+        </script>
         
     </body>
 </html>
