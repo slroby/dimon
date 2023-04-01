@@ -26,7 +26,6 @@
             }
 
             #green {
-                
                 grid-row: 1;
                 grid-column: 1;
                 justify-self: end;
@@ -187,8 +186,25 @@
                 }
 
             }
-            window.addEventListener('keydown', handleKeyDown)
-            window.addEventListener('keyup', handleKeyUp);
+
+            function handleMouseDown(evt) {
+                evt.target.classList.add("on");
+            }
+
+            function handleMouseUp(evt) {
+                evt.target.classList.remove("on");
+            }
+
+
+            window.addEventListener("keydown", handleKeyDown);
+            window.addEventListener("keyup", handleKeyUp);
+
+            const btns = document.querySelectorAll(".btn");
+                btns.forEach( (btn) => {
+                    btn.addEventListener("mousedown", handleMouseDown);
+                    btn.addEventListener("mouseup", handleMouseUp);
+            });
+            
         </script>
         
     </body>
