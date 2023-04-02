@@ -1,0 +1,101 @@
+body {
+  background-color: rgb(25, 25, 25);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  column-gap: 43px;
+  grid-template-rows: 1fr 5px 1fr;
+  border: none;
+  padding: 100px;
+}
+
+.btn {
+  border-radius: 10px;
+  width: 100px;
+  height: 150px;
+}
+
+#green {
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: end;
+  align-self: end;
+  transform: skew(-45deg);
+}
+
+#green.off {
+  background-color: rgba(50, 205, 50, 0.5);
+}
+
+#green.on {
+  background-color: rgb(50, 205, 50);
+}
+
+#red {
+  grid-row: 1;
+  grid-column: 3;
+  justify-self: start;
+  align-self: end;
+  transform: skew(45deg);
+}
+
+#red.off {
+  background-color: rgba(220, 20, 60, 0.5);
+}
+
+#red.on {
+  background-color: rgb(220, 20, 60);
+}
+
+#blue {
+  grid-row: 3;
+  grid-column: 3;
+  justify-self: start;
+  align-self: start;
+  transform: skew(-45deg);
+}
+
+#blue.off {
+  background-color: rgba(30, 144, 255, 0.5);
+}
+
+#blue.on {
+  background-color: rgb(30, 144, 255);
+}
+
+#yellow {
+  grid-row: 3;
+  grid-column: 1;
+  justify-self: end;
+  align-self: start;
+  transform: skew(45deg);
+}
+
+#yellow.off {
+  background-color: rgba(255, 245, 0, 0.5);
+}
+
+#yellow.on {
+  background-color: rgb(255, 245, 0);
+}
+
+#white {
+  grid-row: 2;
+  grid-column: 2;
+  justify-self: center;
+  align-self: center;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  transform: rotate(45deg);
+}
+
+#white.off {
+  background: rgba(245, 245, 245, 0.5);
+}
+
+#white.on {
+  background: rgb(255, 255, 255);
+}
